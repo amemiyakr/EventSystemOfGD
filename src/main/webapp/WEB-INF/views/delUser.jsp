@@ -23,7 +23,7 @@
 			</h3>
 			<div class="resume-item d-flex flex-column flex-md-row mb-5">
 				<div class="resume-content mr-auto">
-					<div class="subheading mb-3">ユーザ削除</div>
+					<div class="subheading mb-3"><i class="far fa-address-card"></i> ユーザ削除</div>
 					<p>このページはユーザの情報の削除。</p>
 				</div>
 				<div class="resume-date text-md-right">

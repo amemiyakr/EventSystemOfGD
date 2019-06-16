@@ -18,12 +18,11 @@
 	<div class="container">
 		<div class="resume-section p-3 p-lg-5 d-flex flex-column">
 			<c:import url="header/header.jsp" />
-			<h3 style="color: #957bbe;">
-				<i class="fab fa-buromobelexperte"></i> EVENT SYSTEM
-			</h3>M</h3>
+			<h3 class="mb-5" style="color: #957bbe;">
+				<i class="fab fa-buromobelexperte"></i> EVENT SYSTEMM</h3>
 			<div class="resume-item d-flex flex-column flex-md-row mb-5">
 				<div class="resume-content mr-auto">
-					<div class="subheading mb-3">イベント削除</div>
+					<div class="subheading mb-3"><i class="far fa-calendar-alt"></i> イベント削除</div>
 					<p>このページはイベントの内容の削除。</p>
 				</div>
 				<div class="resume-date text-md-right">

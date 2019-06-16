@@ -38,17 +38,17 @@ body {
 			<form:hidden path="userName" value="tempName" />
 			<div class="row">
 				<div class="col-sm-12 text">
-					<span style="font-size: 3em; color: #957bbe;"> <i
+					<span style="font-size: 2.5em; color: #957bbe;"> <i
 						class="fab fa-buromobelexperte"></i>
 					</span>
 					<h1 class="h3 mb-3 font-weight-normal">
 						<strong>Event</strong> System
 					</h1>
 					<form:input path="loginId" type="text" cssClass="form-control"
-						placeholder="LoginID" />
+						placeholder="LoginID"  required="required"/>
 
 					<form:input path="pass" type="password" cssClass="form-control"
-						placeholder="Password" />
+						placeholder="Password"  required="required"/>
 					<p class="text-danger">
 						<form:errors path="loginId" />
 					</p>

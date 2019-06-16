@@ -20,7 +20,7 @@
 	<div class="container">
 		<div class="resume-section p-3 p-lg-5 d-flex flex-column">
 			<c:import url="header/header.jsp" />
-			<h3 style="color: #957bbe;">
+			<h3 class="mb-5"  style="color: #957bbe;">
 				<i class="fab fa-buromobelexperte"></i> EVENT SYSTEM
 			</h3>
 			<c:set value="${pagedListHolder}" var="createdList" />
@@ -29,7 +29,7 @@
 			</c:url>
 			<div class="resume-item d-flex flex-column flex-md-row mb-5">
 				<div class="resume-content mr-auto">
-					<div class="subheading mb-3">My イベント管理</div>
+					<div class="subheading mb-3"><i class="fas fa-clipboard-list"></i> My イベント管理</div>
 					<p>このページは該当ユーザ登録したイベントを表示する。</p>
 				</div>
 				<div class="resume-date text-md-right">
@@ -64,7 +64,7 @@
 							</div>
 						</c:forEach>
 					</div>
-					<div class="pull-right">
+					<div class="pull-right mb-4">
 						<tg:pagenation pagedListHolder="${pagedListHolder}"
 							pagedLink="${pagedLink}"></tg:pagenation>
 					</div>

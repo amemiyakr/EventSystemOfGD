@@ -19,12 +19,12 @@
 	<div class="container">
 		<div class="resume-section p-3 p-lg-5 d-flex flex-column">
 			<c:import url="header/header.jsp" />
-			<h3 style="color: #957bbe;">
+			<h3 class="mb-5" style="color: #957bbe;">
 				<i class="fab fa-buromobelexperte"></i> EVENT SYSTEM
 			</h3>
-			<div class="resume-item d-flex flex-column flex-md-row mb-5">
+			<div class="resume-item d-flex flex-column flex-md-row mb-1">
 				<div class="resume-content mr-auto">
-					<div class="subheading mb-3">イベント編集</div>
+					<div class="subheading mb-3"><i class="far fa-calendar-alt"></i> イベント編集</div>
 					<p>このページはイベントの内容の編集。</p>
 				</div>
 				<div class="resume-date text-md-right">
@@ -82,7 +82,7 @@
 								itemLabel="groupName" itemValue="groupId"
 								cssClass="form-control" />
 						</div>
-						<div class="form-group">
+						<div class="form-group mb-4">
 							<p>
 								<strong>詳細</strong>
 							</p>
@@ -93,7 +93,6 @@
 							<input type="submit" value="変更" class="btn btn-warning">
 							<a href="<spring:url value="/detailsEvent/${event.eventId}" />"
 								class="btn btn-secondary">キャンセル</a>
-
 						</p>
 					</div>
 				</div>

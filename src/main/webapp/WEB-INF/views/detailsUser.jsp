@@ -18,12 +18,14 @@
 	<div class="container">
 		<div class="resume-section p-3 p-lg-5 d-flex flex-column">
 			<c:import url="header/header.jsp" />
-			<h3 style="color: #957bbe;">
+			<h3 class="mb-5" style="color: #957bbe;">
 				<i class="fab fa-buromobelexperte"></i> EVENT SYSTEM
 			</h3>
-			<div class="resume-item d-flex flex-column flex-md-row mb-5">
+			<div class="resume-item d-flex flex-column flex-md-row mb-3">
 				<div class="resume-content mr-auto">
-					<div class="subheading mb-3">ユーザ詳細</div>
+					<div class="subheading mb-3">
+						<i class="far fa-address-card"></i> ユーザ詳細
+					</div>
 					<p>このページはユーザの情報を表示する。</p>
 				</div>
 				<div class="resume-date text-md-right">
@@ -32,34 +34,46 @@
 			</div>
 			<div class="row">
 				<div class="col-md-6">
-					<table class="table table-striped table-bordered">
+					<table class="table table-striped mb-4">
 						<tr>
-							<th class="text-center" colspan="2"><img width="30%"
+							<th class="rounded-top border-top-0" colspan="2"
+								style="background-color: #957bbe;"></th>
+						</tr>
+						<tr>
+							<th class="text-center border-left border-right" colspan="2"><img
+								width="30%"
 								class="img-fluid img-profile rounded-circle mx-auto mb-2"
 								src="${pageContext.request.contextPath}/uploads/<c:out value="${user.img}" />">
 							</th>
 						</tr>
 						<tr>
-							<th class="text-right">ID</th>
-							<td class="text-left"><c:out value="${user.userId}" /></td>
+							<th class="text-right border-left border-right">ID</th>
+							<td class="text-left border-right"><c:out
+									value="${user.userId}" /></td>
 						</tr>
 						<tr>
-							<th class="text-right">氏名</th>
-							<td class="text-left"><c:out value="${user.userName}" /></td>
+							<th class="text-right border-left border-right">氏名</th>
+							<td class="text-left border-right"><c:out
+									value="${user.userName}" /></td>
 						</tr>
 						<tr>
-							<th class="text-right">ログインID</th>
-							<td class="text-left"><c:out value="${user.loginId}" /></td>
+							<th class="text-right border-left border-right">ログインID</th>
+							<td class="text-left border-right"><c:out
+									value="${user.loginId}" /></td>
 						</tr>
 						<tr>
-							<th class="text-right">グループ</th>
-							<td class="text-left"><c:out value="${user.group.groupName}" /></td>
+							<th class="text-right border-bottom  border-right border-left">グループ</th>
+							<td class="text-left  border-bottom border-right"><c:out
+									value="${user.group.groupName}" /></td>
+						</tr>
+						<tr>
+							<th class="rounded-bottom border-bottom-0" colspan="2"
+								style="background-color: #957bbe;"></th>
 						</tr>
 					</table>
-					<br> <br> <a href="<spring:url value="/userList" />"
-						class="btn btn-secondary">一覧に戻る</a> <a
-						href="<spring:url value="/editUser/${user.userId}" />"
-						class="btn btn-warning">編集</a>
+					<a href="<spring:url value="/editUser/${user.userId}" />"
+						class="btn btn-warning">編集</a> <a
+						href="<spring:url value="/userList" />" class="btn btn-secondary">一覧に戻る</a>
 					<c:if test="${user.userId != userId}">
 						<button type="button" class="btn btn-danger" data-toggle="modal"
 							data-target="#del">削除</button>

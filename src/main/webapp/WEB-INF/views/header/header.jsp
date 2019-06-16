@@ -31,7 +31,7 @@
 					</c:otherwise>
 				</c:choose>><a
 					class="nav-link js-scroll-trigger"
-					href="<spring:url value="/todayEvent" />">本日のイベント</a></li>
+					href="<spring:url value="/todayEvent" />"><i class="fas fa-calendar-day"></i> 本日のイベント</a></li>
 				<li
 					<c:choose>
 					<c:when test="${action=='eventList'}">
@@ -42,7 +42,7 @@
 					</c:otherwise>
 				</c:choose>><a
 					class="nav-link js-scroll-trigger"
-					href="<spring:url value="/eventList" />">イベント一覧</a></li>
+					href="<spring:url value="/eventList" />"><i class="far fa-calendar-alt"></i> イベント一覧</a></li>
 				<li
 					<c:choose>
 					<c:when test="${action=='MyCreatedEvent'}">
@@ -52,7 +52,7 @@
 						 class="nav-item-default"
 					</c:otherwise>
 				</c:choose>>
-					<a class="nav-link" href="<spring:url value="/myEventList" />">My
+					<a class="nav-link" href="<spring:url value="/myEventList" />"><i class="fas fa-clipboard-list"></i> My
 						イベント管理</a>
 				</li>
 				<li
@@ -64,11 +64,11 @@
 						 class="nav-item-default"
 					</c:otherwise>
 				</c:choose>><a class="nav-link js-scroll-trigger"
-					href="<spring:url value="/userList" />">ユーザ管理</a></li>
+					href="<spring:url value="/userList" />"><i class="far fa-address-card"></i> ユーザ管理</a></li>
 				<li class="nav-link"></li>
 				<li class="nav-link"></li>
-				<li class="nav-link">ACCOUNT: <c:out value="${userName}" /></li>
-				<li class="nav-link"><c:choose>
+				<li class="nav-link"><i class="fas fa-user-tie"></i>  <c:out value="${userName}" /></li>
+				<li class="nav-link"><i class="fas fa-id-badge"></i> <c:choose>
 						<c:when test="${typeId==2}">
 							管理ユーザ
 						</c:when>
@@ -76,8 +76,8 @@
 							一般ユーザ
 						</c:otherwise>
 					</c:choose></li>
-				<li class="nav-item"><a class="nav-link js-scroll-trigger"
-					href="<spring:url value="/logout" />">ログアウト</a></li>
+				<li class="nav-item-default"><a class="nav-link js-scroll-trigger"
+					href="<spring:url value="/logout" />"><i class="fas fa-sign-out-alt"></i> LOGOUT</a></li>
 			</ul>
 		</div>
 	</nav>

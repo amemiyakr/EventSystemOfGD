@@ -24,12 +24,12 @@
 	<div class="container">
 		<div class="resume-section p-3 p-lg-5 d-flex flex-column">
 			<c:import url="header/header.jsp" />
-			<h3 style="color: #957bbe;">
+			<h3 class="mb-5" style="color: #957bbe;">
 				<i class="fab fa-buromobelexperte"></i> EVENT SYSTEM
 			</h3>
-			<div class="resume-item d-flex flex-column flex-md-row mb-5">
+			<div class="resume-item d-flex flex-column flex-md-row mb-1">
 				<div class="resume-content mr-auto">
-					<div class="subheading mb-3">ユーザ一覧</div>
+					<div class="subheading mb-3"><i class="far fa-address-card"></i> ユーザ一覧</div>
 					<p>
 						このページは<strong>管理ユーザ</strong>に向け、ユーザ情報をリストで表示する。
 					</p>
@@ -43,6 +43,7 @@
 
 			</div>
 			<table id="table"></table>
+			<div  class=" mb-3"></div>
 			<p>
 				<a href="addUser" class="btn btn-primary">ユーザの登録</a>
 			</p>
