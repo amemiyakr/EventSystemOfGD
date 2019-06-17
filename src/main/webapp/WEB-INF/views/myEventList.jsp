@@ -43,10 +43,10 @@
 							<div class="card border-success mb-3 text-center"
 								style="width: 18rem;">
 								<div class="card-header">
-									<c:out value="${created.title}" />
+									<i class="fab fa-ethereum"></i>　<c:out value="${created.title}" />
 								</div>
 								<div class="card-body text-default">
-									<p class="card-text">開始日時</p>
+									<p class="card-text"><i class="far fa-bell"></i>　開始日時</p>
 									<p class="card-text">
 										<fmt:formatDate value="${created.startdate }"
 											pattern="yyyy年MM月dd日(E)" />
@@ -55,7 +55,7 @@
 										<fmt:formatDate value="${created.startdate }" pattern="HH時mm分" />
 									</p>
 									<p class="card-text">
-										場所:
+										<i class="fas fa-map-marked-alt"></i>　場所:
 										<c:out value="${created.place}" />
 									</p>
 									<a href="detailsEvent/<c:out value="${created.eventId}" />"

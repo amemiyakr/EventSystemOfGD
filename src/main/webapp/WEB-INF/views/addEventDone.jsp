@@ -30,7 +30,6 @@
 					<span class="text-primary">JUNE 2019 - MIE</span>
 				</div>
 			</div>
-			<h1>イベント登録</h1>
 			<div class="row">
 				<div class="col-md-12">
 					<h3>イベント登録が完了しました。</h3>

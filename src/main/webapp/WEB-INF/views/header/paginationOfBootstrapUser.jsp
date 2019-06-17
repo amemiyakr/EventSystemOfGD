@@ -19,13 +19,13 @@
 				title : 'ID'	//title of you like
 			}, {
 				field : 'name',
-				title : '氏名'
+				title : '<i class="fas fa-user"></i>　氏名'
 			}, {
 				field : 'groupName',
-				title : '所属グループ'
+				title : '<i class="fas fa-user-tag"></i>　所属グループ'
 			} , {
 				field : 'role',
-				title : '身分'
+				title : '<i class="fas fa-id-badge"></i>　身分'
 			} , {
 				field : 'details',
 				title : '詳細'

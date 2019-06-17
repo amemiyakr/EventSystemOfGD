@@ -47,7 +47,7 @@
 							</th>
 						</tr>
 						<tr>
-							<th class="text-right border-left border-right">ID</th>
+							<th class="text-right border-left border-right" style=" width: 50%">ID</th>
 							<td class="text-left border-right"><c:out
 									value="${user.userId}" /></td>
 						</tr>
@@ -60,6 +60,11 @@
 							<th class="text-right border-left border-right">ログインID</th>
 							<td class="text-left border-right"><c:out
 									value="${user.loginId}" /></td>
+						</tr>
+						<tr>
+							<th class="text-right border-bottom  border-right border-left">E-mail</th>
+							<td class="text-left  border-bottom border-right"><c:out
+									value="${user.mail}" /></td>
 						</tr>
 						<tr>
 							<th class="text-right border-bottom  border-right border-left">グループ</th>

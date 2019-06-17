@@ -14,5 +14,6 @@
 		<many-to-one name="group" column="group_id" />
 		<property name="createdate" column="createdate" type="timestamp" />
 		<property name="img" column="img" type="string" />
+		<property name="mail" column="mail" type="string" />
 	</class>
 </hibernate-mapping>

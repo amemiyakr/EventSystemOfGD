@@ -49,7 +49,7 @@
 							mb-3 text-center"
 								style="width: 18rem;">
 								<div class="card-header">
-									<c:out value="${event.title}" />
+									<i class="fab fa-ethereum"></i>　<c:out value="${event.title}" />
 									<c:forEach items="${joinList}" var="join">
 										<c:if
 											test="${join.event.eventId == event.eventId && join.user.userId == userId }">
@@ -58,7 +58,7 @@
 									</c:forEach>
 								</div>
 								<div class="card-body text-default">
-									<p class="card-text">開始日時</p>
+									<p class="card-text"><i class="far fa-bell"></i>　開始日時</p>
 									<p class="card-text">
 										<fmt:formatDate value="${event.startdate }"
 											pattern="yyyy年MM月dd日(E)" />
@@ -67,7 +67,7 @@
 										<fmt:formatDate value="${event.startdate }" pattern="HH時mm分" />
 									</p>
 									<p class="card-text">
-										場所:
+										<i class="fas fa-map-marked-alt"></i>　場所:
 										<c:out value="${event.place}" />
 									</p>
 									<a href="detailsEvent/<c:out value="${event.eventId}" />"

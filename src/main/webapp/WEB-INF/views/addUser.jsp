@@ -24,7 +24,9 @@
 			</h3>
 			<div class="resume-item d-flex flex-column flex-md-row mb-1">
 				<div class="resume-content mr-auto">
-					<div class="subheading mb-3"><i class="far fa-address-card"></i> ユーザ登録</div>
+					<div class="subheading mb-3">
+						<i class="far fa-address-card"></i> ユーザ登録
+					</div>
 					<p>このページはユーザ情報の登録。</p>
 				</div>
 				<div class="resume-date text-md-right">
@@ -38,51 +40,84 @@
 							<p>
 								<strong>氏名(必須)</strong>
 							</p>
-							<form:input path="userName" cssClass="form-control"
-								placeholder="氏名" required="required" />
-							<form:errors path="userName" cssClass="form-control alert-danger" />
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+								<form:input path="userName" cssClass="form-control"
+									placeholder="氏名" required="required" />
+								<form:errors path="userName"
+									cssClass="form-control alert-danger" />
+							</div>
 						</div>
 						<div class="form-group">
 							<p>
 								<strong>ログインID(必須)</strong>
 							</p>
-							<form:input path="loginId" cssClass="form-control"
-								placeholder="ログインID" required="required" />
-							<form:errors path="loginId" cssClass="form-control alert-danger" />
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i
+									class="far fa-address-card"></i></span>
+								<form:input path="loginId" cssClass="form-control"
+									placeholder="ログインID" required="required" />
+								<form:errors path="loginId" cssClass="form-control alert-danger" />
+							</div>
 						</div>
 						<div class="form-group">
 							<p>
 								<strong>パスワード(必須)</strong>
 							</p>
-							<form:input path="pass" cssClass="form-control" type="password"
-								placeholder="パスワード" required="required" />
-							<form:errors path="pass" cssClass="form-control alert-danger" />
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+								<form:input path="pass" cssClass="form-control" type="password"
+									placeholder="パスワード" required="required" />
+								<form:errors path="pass" cssClass="form-control alert-danger" />
+							</div>
 						</div>
 						<div class="form-group">
 							<p>
 								<strong>ユーザ種別</strong>
 							</p>
-							<form:select path="type.typeId" items="${type }"
-								itemLabel="typeName" itemValue="typeId" cssClass="form-control">
-							</form:select>
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-id-badge"></i></span>
+								<form:select path="type.typeId" items="${type }"
+									itemLabel="typeName" itemValue="typeId" cssClass="form-control">
+								</form:select>
+							</div>
 						</div>
 						<div class="form-group">
 							<p>
 								<strong>対象グループ</strong>
 							</p>
-							<form:select path="group.groupId" items="${group }"
-								itemLabel="groupName" itemValue="groupId"
-								cssClass="form-control">
-							</form:select>
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-user-tag"></i></span>
+								<form:select path="group.groupId" items="${group }"
+									itemLabel="groupName" itemValue="groupId"
+									cssClass="form-control">
+								</form:select>
+							</div>
+						</div>
+						<div class="form-group">
+							<p>
+								<strong>E-mail</strong>
+							</p>
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="basic-addon1">@</span>
+								<form:input path="mail" cssClass="form-control"
+									placeholder="E-mail" required="required" type="email" />
+								<form:errors path="mail" cssClass="form-control alert-danger" />
+							</div>
 						</div>
 						<div class="form-group mb-4">
 							<p>
 								<strong>ユーザ写真</strong>
 							</p>
-							<input type="file" name="file" class="form-control"
-								placeholder="ユーザ写真" />
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="far fa-images"></i></span>
+								<div class="custom-file">
+									<input type="file" name="file" class="custom-file-input"
+										placeholder="ユーザ写真" /> <label class="custom-file-label"
+										for="inputGroupFile01">Choose file</label>
+								</div>
+							</div>
 						</div>
-						<div ></div>
 						<p>
 							<input type="submit" value="登録" class="btn btn-primary">
 							<a href="userList" class="btn btn-secondary">キャンセル</a>

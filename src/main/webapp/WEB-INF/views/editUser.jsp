@@ -48,64 +48,99 @@
 							<p>
 								<strong>氏名(必須)</strong>
 							</p>
-							<form:input path="userName" cssClass="form-control"
-								placeholder="氏名" />
-							<form:errors path="userName" cssClass="form-control alert-danger" />
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+								<form:input path="userName" cssClass="form-control"
+									placeholder="氏名" />
+								<form:errors path="userName"
+									cssClass="form-control alert-danger" />
+							</div>
 						</div>
 						<div class="form-group">
 							<p>
 								<strong>ログインID(必須)</strong>
 							</p>
-							<form:input path="loginId" cssClass="form-control"
-								placeholder="ログインID" />
-							<form:errors path="loginId" cssClass="form-control alert-danger" />
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i
+									class="far fa-address-card"></i></span>
+								<form:input path="loginId" cssClass="form-control"
+									placeholder="ログインID" />
+								<form:errors path="loginId" cssClass="form-control alert-danger" />
+							</div>
 						</div>
 						<div class="form-group">
 							<p>
 								<strong>パスワード(変更の場合のみ)</strong>
 							</p>
-							<form:password name="passNew" path="" cssClass="form-control"
-								placeholder="パスワード" />
-							<form:hidden path="pass" />
-							<form:errors path="pass" cssClass="form-control alert-danger" />
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+								<form:password name="passNew" path="" cssClass="form-control"
+									placeholder="パスワード" />
+								<form:hidden path="pass" />
+								<form:errors path="pass" cssClass="form-control alert-danger" />
+							</div>
+						</div>
+						<div class="form-group">
+							<p>
+								<strong>E-mail</strong>
+							</p>
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="basic-addon1">@</span>
+								<form:input name="mail" path="mail" cssClass="form-control"
+									placeholder="E-mail" />
+								<form:errors path="mail" cssClass="form-control alert-danger" />
+							</div>
 						</div>
 					</div>
+
 					<div class="col">
 						<div class="form-group">
 							<p>
 								<strong>ユーザー種別</strong>
 							</p>
-							<c:choose>
-								<c:when test="${user.userId == userId }">
-									<form:select path="type.typeId" items="${type }"
-										itemLabel="typeName" itemValue="typeId"
-										cssClass="form-control" disabled="true">
-									</form:select>
-									<form:hidden path="type.typeId" />
-								</c:when>
-								<c:otherwise>
-									<form:select path="type.typeId" items="${type }"
-										itemLabel="typeName" itemValue="typeId"
-										cssClass="form-control">
-									</form:select>
-								</c:otherwise>
-							</c:choose>
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-id-badge"></i></span>
+								<c:choose>
+									<c:when test="${user.userId == userId }">
+										<form:select path="type.typeId" items="${type }"
+											itemLabel="typeName" itemValue="typeId"
+											cssClass="form-control" disabled="true">
+										</form:select>
+										<form:hidden path="type.typeId" />
+									</c:when>
+									<c:otherwise>
+										<form:select path="type.typeId" items="${type }"
+											itemLabel="typeName" itemValue="typeId"
+											cssClass="form-control">
+										</form:select>
+									</c:otherwise>
+								</c:choose>
+							</div>
 						</div>
 						<div class="form-group">
 							<p>
 								<strong>対象グループ</strong>
 							</p>
-							<form:select path="group.groupId" items="${group }"
-								itemLabel="groupName" itemValue="groupId"
-								cssClass="form-control">
-							</form:select>
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-user-tag"></i></span>
+								<form:select path="group.groupId" items="${group }"
+									itemLabel="groupName" itemValue="groupId"
+									cssClass="form-control">
+								</form:select>
+							</div>
 						</div>
-						<div class="form-group">
+						<div class="form-group mb-4">
 							<p>
 								<strong>ユーザ写真</strong>
 							</p>
-							<input type="file" name="file" class="form-control"
-								placeholder="ユーザ写真" />
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="far fa-images"></i></span>
+								<div class="custom-file">
+									<input type="file" name="file" class="custom-file-input"
+										placeholder="ユーザ写真" /> <label class="custom-file-label"
+										for="inputGroupFile01">Choose file</label>
+								</div>
+							</div>
 						</div>
 						<form:hidden path="img" />
 						<form:hidden path="userId" />

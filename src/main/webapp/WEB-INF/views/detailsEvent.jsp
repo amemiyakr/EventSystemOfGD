@@ -23,7 +23,9 @@
 			</h3>
 			<div class="resume-item d-flex flex-column flex-md-row mb-1">
 				<div class="resume-content mr-auto">
-					<div class="subheading mb-3"><i class="far fa-calendar-alt"></i> イベント詳細</div>
+					<div class="subheading mb-3">
+						<i class="far fa-calendar-alt"></i> イベント詳細
+					</div>
 					<p>このページはイベントの詳細内容を表示する。</p>
 				</div>
 				<div class="resume-date text-md-right">
@@ -34,6 +36,7 @@
 				<div class="col-md-12">
 					<table class="table table-striped mb-4">
 						<tr>
+							<th width="3%" ><i class="fab fa-ethereum"></i></th>
 							<th>タイトル</th>
 							<td><c:out value="${event.title}" /> <c:if
 									test="${yourJoin != null}">
@@ -41,20 +44,24 @@
 								</c:if></td>
 						</tr>
 						<tr>
+							<th><i class="far fa-bell"></i></th>
 							<th>開始日時</th>
 							<td><fmt:formatDate value="${event.startdate}"
 									pattern="yyyy年MM月dd日(E) HH時mm分" /></td>
 						</tr>
 						<tr>
+							<th><i class="fas fa-bell"></i></th>
 							<th>終了日時</th>
 							<td><fmt:formatDate value="${event.enddate}"
 									pattern="yyyy年MM月dd日(E) HH時mm分" /></td>
 						</tr>
 						<tr>
+							<th><i class="fas fa-map-marked-alt"></i></th>
 							<th>場所</th>
 							<td><c:out value="${event.place}" /></td>
 						</tr>
 						<tr>
+							<th><i class="fas fa-user-tag"></i></th>
 							<th>対象グループ</th>
 							<td><c:choose>
 									<c:when test="${event.group.groupName==null}">
@@ -66,14 +73,17 @@
 								</c:choose></td>
 						</tr>
 						<tr>
+							<th><i class="fas fa-info-circle"></i></th>
 							<th>詳細</th>
 							<td><c:out value="${event.details}" /></td>
 						</tr>
 						<tr>
+							<th><i class="fas fa-user"></i></th>
 							<th>登録者</th>
 							<td><c:out value="${event.user.userName}" /></td>
 						</tr>
 						<tr>
+							<th><i class="fas fa-users"></i></th>
 							<th>参加者</th>
 							<td><c:forEach items="${joinList}" var="join"
 									varStatus="joinStatus">

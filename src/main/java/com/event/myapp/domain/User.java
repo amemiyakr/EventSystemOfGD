@@ -16,6 +16,7 @@ public class User {
 	private Group group;
 	private Date createdate;
 	private String img;
+	private String mail;
 
 	public Integer getUserId() {
 		return userId;
@@ -79,6 +80,14 @@ public class User {
 
 	public void setImg(String img) {
 		this.img = img;
+	}
+
+	public String getMail() {
+		return mail;
+	}
+
+	public void setMail(String mail) {
+		this.mail = mail;
 	}
 
 

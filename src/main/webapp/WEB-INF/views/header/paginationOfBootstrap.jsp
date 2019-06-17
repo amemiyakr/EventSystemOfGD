@@ -16,16 +16,16 @@
 			search : true,	//show search
 			columns : [ {
 				field : 'title',	//date tag
-				title : 'タイトル'	//title of you like
+				title : '<i class="fab fa-ethereum"></i>　タイトル'	//title of you like
 			}, {
 				field : 'startdate',
-				title : '開始日時'
+				title : '<i class="far fa-bell"></i>　開始日時'
 			}, {
 				field : 'place',
-				title : '場所'
+				title : '<i class="fas fa-map-marked-alt"></i>　場所'
 			} , {
 				field : 'groupName',
-				title : '対象グループ'
+				title : '<i class="fas fa-user-tag"></i>　対象グループ'
 			} , {
 				field : 'details',
 				title : '詳細'

@@ -40,48 +40,67 @@
 							<p>
 								<strong>タイトル(必須)</strong>
 							</p>
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fab fa-ethereum"></i></span>
 							<form:input path="title" cssClass="form-control"
 								placeholder="例：Swiftの勉強会" required="required" />
 							<form:errors path="title" cssClass="form-control alert-danger" />
+						</div>
 						</div>
 						<div class="form-group">
 							<p>
 								<strong>開始日時(必須)</strong>
 							</p>
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="far fa-bell"></i></span>
 							<input type="datetime-local" step="300" name="startDate"
 								class="form-control" required="required">
+						</div>
 						</div>
 						<div class="form-group">
 							<p>
 								<strong>終了日時(必須)</strong>
 							</p>
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-bell"></i></span>
 							<input type="datetime-local" step="300" name="endDate"
 								class="form-control" required="required"
 								pattern="yyyy-MM-dd HH:mm:ss">
+						</div>
 						</div>
 						<div class="form-group">
 							<p>
 								<strong>場所(必須)</strong>
 							</p>
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-map-marked-alt"></i></span>
 							<form:input path="place" cssClass="form-control" placeholder=""
 								required="required" />
 							<form:errors path="place" cssClass="form-control alert-danger" />
+						</div>
 						</div>
 						<div class="form-group">
 							<p>
 								<strong>対象グループ</strong>
 							</p>
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-users"></i></span>
 							<form:select path="group.groupId" items="${group }"
 								itemLabel="groupName" itemValue="groupId"
 								cssClass="form-control">
 							</form:select>
 						</div>
+						</div>
 						<div class="form-group mb-4">
 							<p>
 								<strong>詳細</strong>
 							</p>
-							<form:textarea path="details" cssClass="form-control"
-								placeholder="" />
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i
+									class="fas fa-info-circle"></i></span>
+								<form:textarea path="details" cssClass="form-control"
+									placeholder="" />
+							</div>
 						</div>
 						<p>
 							<form:hidden path="user.userId" />

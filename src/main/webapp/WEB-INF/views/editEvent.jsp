@@ -42,51 +42,69 @@
 							<p>
 								<strong>タイトル(必須)</strong>
 							</p>
-							<form:input path="title" cssClass="form-control"
-								required="required" />
-							<form:errors path="title" cssClass="form-control alert-danger" />
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fab fa-ethereum"></i></span>
+								<form:input path="title" cssClass="form-control"
+									required="required" />
+								<form:errors path="title" cssClass="form-control alert-danger" />
+							</div>
 						</div>
 						<div class="form-group">
 							<p>
 								<strong>開始日時(必須)</strong>
 							</p>
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="far fa-bell"></i></span>
 							<input type="datetime-local" step="300" name="startDate"
 								class="form-control"
 								value="<fmt:formatDate value="${event.startdate}"
 									pattern="yyyy-MM-dd'T'HH:mm:ss" />"
 								required="required">
 						</div>
+						</div>
 						<div class="form-group">
 							<p>
 								<strong>終了日時(必須)</strong>
 							</p>
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-bell"></i></span>
 							<input type="datetime-local" step="300" name="endDate"
 								class="form-control"
 								value="<fmt:formatDate value="${event.enddate}"
 									pattern="yyyy-MM-dd'T'HH:mm:ss" />"
 								pattern="yyyy-MM-dd HH:mm:ss" required="required">
 						</div>
+						</div>
 						<div class="form-group">
 							<p>
 								<strong>場所(必須)</strong>
 							</p>
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-map-marked-alt"></i></span>
 							<form:input path="place" cssClass="form-control"
 								required="required" />
 							<form:errors path="place" cssClass="form-control alert-danger" />
+						</div>
 						</div>
 						<div class="form-group">
 							<p>
 								<strong>対象グループ</strong>
 							</p>
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-users"></i></span>
 							<form:select path="group.groupId" items="${group }"
 								itemLabel="groupName" itemValue="groupId"
 								cssClass="form-control" />
+						</div>
 						</div>
 						<div class="form-group mb-4">
 							<p>
 								<strong>詳細</strong>
 							</p>
-							<form:textarea path="details" cssClass="form-control" />
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-info-circle"></i></span>
+								<form:textarea path="details" cssClass="form-control" />
+							</div>
 						</div>
 						<p>
 							<form:hidden path="user.userId" />
