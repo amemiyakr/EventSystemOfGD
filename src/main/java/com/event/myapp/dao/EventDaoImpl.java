@@ -81,4 +81,13 @@ public class EventDaoImpl extends BaseDao implements EventDao {
 				.list();
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Event> findNeedToMail(String tomail) throws Exception {
+		return getSession().createCriteria(Event.class)
+				.setFetchMode("user", FetchMode.JOIN)
+				.add(Restrictions.eq("sendMail", tomail))
+				.list();
+	}
+
 }

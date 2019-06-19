@@ -42,4 +42,36 @@
 				</c:forEach>
 			]
 		})
+
+
+		jQuery(function($){
+    $.fn.dataTable.ext.search.push(
+        function( settings, data, dataIndex ) {
+            var form = document.forms[0]; // １列目の値を取得
+            var value = form.elements['フォームの名前'].value;
+
+            if (value !== '' && data[0] !== value) { // 行の値と一致するか判定
+                return false;
+            }
+
+            return true;
+        }
+    );
+    // テーブル初期化
+    var table = $('#table').DataTable({
+        // 検索機能
+        searching: true, // falseにすると独自の検索も反映されない
+    });
+    // フォーム切り替え時にテーブル更新
+    $('form').on('change', function(event) {
+        table.draw();
+    });
+    // 検索条件リセット
+    $('#search_reset').click(function() {
+        var form = document.forms[0];
+        form.elements['title'].value = '';
+        form.elements['area'].value = '';
+        table.draw();
+    });
+});
 	</script>

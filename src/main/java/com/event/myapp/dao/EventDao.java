@@ -19,5 +19,7 @@ public interface EventDao {
 
 	void delete(Event event) throws Exception;
 
- 	List<Event> findMyEvent(User user) throws Exception;
+	List<Event> findMyEvent(User user) throws Exception;
+
+	List<Event> findNeedToMail(String tomail) throws Exception;
 }

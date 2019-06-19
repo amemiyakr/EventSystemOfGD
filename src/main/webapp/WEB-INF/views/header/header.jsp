@@ -31,7 +31,7 @@
 					</c:otherwise>
 				</c:choose>><a
 					class="nav-link js-scroll-trigger"
-					href="<spring:url value="/todayEvent" />"><i class="fas fa-calendar-day"></i> 本日のイベント</a></li>
+					href="<spring:url value="/todayEvent" />"><i class="fas fa-calendar-day"></i> 開催中のイベント</a></li>
 				<li
 					<c:choose>
 					<c:when test="${action=='eventList'}">

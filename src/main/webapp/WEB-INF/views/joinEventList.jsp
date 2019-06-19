@@ -45,10 +45,10 @@
 							<div class="card border-danger mb-3 text-center"
 								style="max-width: 18rem;">
 								<div class="card-header">
-									<c:out value="${join.event.title}" />
+									<i class="fab fa-ethereum"></i>　<c:out value="${join.event.title}" />
 								</div>
 								<div class="card-body">
-									<p class="card-text">開始日時</p>
+									<p class="card-text"><i class="far fa-bell"></i>　開始日時</p>
 									<p class="card-text">
 										<fmt:formatDate value="${join.event.startdate }"
 											pattern="yyyy年MM月dd日(E)" />
@@ -58,7 +58,7 @@
 											pattern="HH時mm分ss" />
 									</p>
 									<p class="card-text">
-										場所:
+										<i class="fas fa-map-marked-alt"></i>　場所:
 										<c:out value="${join.event.place}" />
 									</p>
 									<a href="detailsEvent/<c:out value="${join.event.eventId}" />"

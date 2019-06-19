@@ -12,7 +12,7 @@
 	rel="stylesheet" />
 <link href="<spring:url value="/css/all.min.css" />" rel="stylesheet" />
 <link href="<spring:url value="/css/style.css" />" rel="stylesheet" />
-<title>本日のイベント</title>
+<title>開催中のイベント</title>
 </head>
 <body>
 	<div class="container">
@@ -27,8 +27,8 @@
 			</c:url>
 			<div class="resume-item d-flex flex-column flex-md-row mb-5">
 				<div class="resume-content mr-auto">
-					<div class="subheading mb-3"><i class="fas fa-calendar-day"></i> 本日のイベント</div>
-					<p>このページは本日開催されるイベントのみを開始日時の新しい順に並べて表示する。</p>
+					<div class="subheading mb-3"><i class="fas fa-calendar-day"></i> 開催中のイベント</div>
+					<p>このページは本日開催中のイベントのみを開始日時の新しい順に並べて表示する。</p>
 				</div>
 				<div class="resume-date text-md-right">
 					<span class="text-primary">JUNE 2019 - MIE</span>

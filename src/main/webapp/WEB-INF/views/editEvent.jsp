@@ -36,7 +36,7 @@
 					<div class="col-md-12">
 						<div class="form-group">
 							<form:hidden path="eventId" />
-
+							<form:hidden path="sendMail" />
 						</div>
 						<div class="form-group">
 							<p>

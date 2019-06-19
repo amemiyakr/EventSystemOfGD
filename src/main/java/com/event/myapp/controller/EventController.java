@@ -95,10 +95,11 @@ public class EventController {
 			Model model) throws Exception {
 		List<Group> group = groupDao.findAll();
 		model.addAttribute("group", group);
+		event.setSendMail("false");
 
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 
-		if (startDateOfJSP != null && endDateOfJSP != null) {	//if startDate and not null
+		if (startDateOfJSP != null && endDateOfJSP != null) { //if startDate and not null
 			Date startdate = sdf.parse((startDateOfJSP).replace("T", " "));//replace 2019-06-06T09:00:00 to 2019-06-06 09:00:00
 			event.setStartdate(startdate);
 			Date enddate = sdf.parse((endDateOfJSP).replace("T", " "));
@@ -202,7 +203,7 @@ public class EventController {
 
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 
-		if (startDateOfJSP != null && endDateOfJSP != null) {	//if startDate and not null
+		if (startDateOfJSP != null && endDateOfJSP != null) { //if startDate and not null
 			Date startdate = sdf.parse((startDateOfJSP).replace("T", " "));//replace 2019-06-06T09:00:00 to 2019-06-06 09:00:00
 			event.setStartdate(startdate);
 			Date enddate = sdf.parse((endDateOfJSP).replace("T", " "));

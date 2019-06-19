@@ -16,6 +16,7 @@ public class Event {
 	private String details;
 	private User user;
 	private Date createdate;
+	private String sendMail;
 
 	public Integer getEventId() {
 		return eventId;
@@ -88,6 +89,15 @@ public class Event {
 	public void setCreatedate(Date createdate) {
 		this.createdate = createdate;
 	}
+
+	public String getSendMail() {
+		return sendMail;
+	}
+
+	public void setSendMail(String sendMail) {
+		this.sendMail = sendMail;
+	}
+
 
 
 }

@@ -21,12 +21,14 @@
 	<div class="container">
 		<div class="resume-section p-3 p-lg-5 d-flex flex-column">
 			<c:import url="header/header.jsp" />
-			<h3 class="mb-5"  style="color: #957bbe;">
+			<h3 class="mb-5" style="color: #957bbe;">
 				<i class="fab fa-buromobelexperte"></i> EVENT SYSTEM
 			</h3>
 			<div class="resume-item d-flex flex-column flex-md-row mb-1">
 				<div class="resume-content mr-auto">
-					<div class="subheading mb-3"><i class="far fa-calendar-alt"></i> イベント一覧</div>
+					<div class="subheading mb-3">
+						<i class="far fa-calendar-alt"></i> イベント一覧
+					</div>
 					<p>このページは全部のイベント情報をリストで表示する。</p>
 					<p>
 						右の<strong>「検索入力欄」</strong>の中に検索内容を入力して、結果が表示される。
@@ -38,7 +40,7 @@
 
 			</div>
 			<table id="table"></table>
-			<div  class=" mb-3"></div>
+			<div class=" mb-3"></div>
 			<p>
 				<a href="joinEventList" class="btn btn-info">参加したイベント</a>
 			</p>
