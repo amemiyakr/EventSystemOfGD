@@ -18,7 +18,7 @@
 	<div class="container">
 		<div class="resume-section p-3 p-lg-5 d-flex flex-column">
 			<c:import url="header/header.jsp" />
-			<h3 class="mb-5"  style="color: #957bbe;">
+			<h3 class="mb-5" style="color: #957bbe;">
 				<i class="fab fa-buromobelexperte"></i> EVENT SYSTEM
 			</h3>
 			<c:set value="${pagedListHolder}" var="todayEventList" />
@@ -27,13 +27,21 @@
 			</c:url>
 			<div class="resume-item d-flex flex-column flex-md-row mb-5">
 				<div class="resume-content mr-auto">
-					<div class="subheading mb-3"><i class="fas fa-calendar-day"></i> 開催中のイベント</div>
+					<div class="subheading mb-3">
+						<i class="fas fa-calendar-day"></i> 開催中のイベント
+					</div>
 					<p>このページは本日開催中のイベントのみを開始日時の新しい順に並べて表示する。</p>
+					<p>
+						自分が参加を表明しているイベントのタイトル右側には [ <strong>参加</strong> ] と表示する。
+					</p>
 				</div>
 				<div class="resume-date text-md-right">
 					<span class="text-primary">JUNE 2019 - MIE</span>
 				</div>
 			</div>
+			<p>
+				<a href="dateOfEvent" class="btn btn-info">最近のイベント</a>
+			</p>
 			<div class="row">
 				<div class="col-md-12">
 					<div class="card-deck">
@@ -49,7 +57,8 @@
 							mb-3 text-center"
 								style="width: 18rem;">
 								<div class="card-header">
-									<i class="fab fa-ethereum"></i>　<c:out value="${event.title}" />
+									<i class="fab fa-ethereum"></i>
+									<c:out value="${event.title}" />
 									<c:forEach items="${joinList}" var="join">
 										<c:if
 											test="${join.event.eventId == event.eventId && join.user.userId == userId }">
@@ -58,7 +67,9 @@
 									</c:forEach>
 								</div>
 								<div class="card-body text-default">
-									<p class="card-text"><i class="far fa-bell"></i>　開始日時</p>
+									<p class="card-text">
+										<i class="far fa-bell"></i> 開始日時
+									</p>
 									<p class="card-text">
 										<fmt:formatDate value="${event.startdate }"
 											pattern="yyyy年MM月dd日(E)" />
@@ -67,7 +78,7 @@
 										<fmt:formatDate value="${event.startdate }" pattern="HH時mm分" />
 									</p>
 									<p class="card-text">
-										<i class="fas fa-map-marked-alt"></i>　場所:
+										<i class="fas fa-map-marked-alt"></i> 場所:
 										<c:out value="${event.place}" />
 									</p>
 									<a href="detailsEvent/<c:out value="${event.eventId}" />"
@@ -76,13 +87,10 @@
 							</div>
 						</c:forEach>
 					</div>
-					<p>
-						自分が参加を表明しているイベントのタイトル右側には [ <strong>参加</strong> ] と表示する。
-					</p>
-				</div>
-				<div class="pull-right">
-					<tg:pagenation pagedListHolder="${pagedListHolder}"
-						pagedLink="${pagedLink}"></tg:pagenation>
+					<div class="pull-right">
+						<tg:pagenation pagedListHolder="${pagedListHolder}"
+							pagedLink="${pagedLink}"></tg:pagenation>
+					</div>
 				</div>
 			</div>
 		</div>

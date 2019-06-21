@@ -20,7 +20,7 @@
 	<div class="container">
 		<div class="resume-section p-3 p-lg-5 d-flex flex-column">
 			<c:import url="header/header.jsp" />
-			<h3 class="mb-5"  style="color: #957bbe;">
+			<h3 class="mb-5" style="color: #957bbe;">
 				<i class="fab fa-buromobelexperte"></i> EVENT SYSTEM
 			</h3>
 			<c:set value="${pagedListHolder}" var="createdList" />
@@ -29,13 +29,22 @@
 			</c:url>
 			<div class="resume-item d-flex flex-column flex-md-row mb-5">
 				<div class="resume-content mr-auto">
-					<div class="subheading mb-3"><i class="fas fa-clipboard-list"></i> My イベント管理</div>
+					<div class="subheading mb-3">
+						<i class="fas fa-clipboard-list"></i> My イベント管理
+					</div>
 					<p>このページは該当ユーザ登録したイベントを表示する。</p>
+					<p>
+						<strong>「参加したイベント」</strong>を押すと該当ユーザ参加したのイベントを表示する。
+					</p>
 				</div>
 				<div class="resume-date text-md-right">
 					<span class="text-primary">JUNE 2019 - MIE</span>
 				</div>
 			</div>
+			<p>
+				<a href="joinEventList" class="btn btn-info">参加したイベント</a> <a
+					href="addEvent" class="btn btn-success">イベントの登録</a>
+			</p>
 			<div class="row">
 				<div class="col-md-12">
 					<div class="card-deck">
@@ -43,10 +52,13 @@
 							<div class="card border-success mb-3 text-center"
 								style="width: 18rem;">
 								<div class="card-header">
-									<i class="fab fa-ethereum"></i>　<c:out value="${created.title}" />
+									<i class="fab fa-ethereum"></i>
+									<c:out value="${created.title}" />
 								</div>
 								<div class="card-body text-default">
-									<p class="card-text"><i class="far fa-bell"></i>　開始日時</p>
+									<p class="card-text">
+										<i class="far fa-bell"></i> 開始日時
+									</p>
 									<p class="card-text">
 										<fmt:formatDate value="${created.startdate }"
 											pattern="yyyy年MM月dd日(E)" />
@@ -55,7 +67,7 @@
 										<fmt:formatDate value="${created.startdate }" pattern="HH時mm分" />
 									</p>
 									<p class="card-text">
-										<i class="fas fa-map-marked-alt"></i>　場所:
+										<i class="fas fa-map-marked-alt"></i> 場所:
 										<c:out value="${created.place}" />
 									</p>
 									<a href="detailsEvent/<c:out value="${created.eventId}" />"
@@ -68,9 +80,6 @@
 						<tg:pagenation pagedListHolder="${pagedListHolder}"
 							pagedLink="${pagedLink}"></tg:pagenation>
 					</div>
-					<p>
-						<a href="addEvent" class="btn btn-success">イベントの登録</a>
-					</p>
 				</div>
 			</div>
 		</div>

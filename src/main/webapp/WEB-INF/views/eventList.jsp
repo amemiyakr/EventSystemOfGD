@@ -4,6 +4,10 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%
+session.setAttribute("oldEvent" , "false");
+session.setAttribute("now" , new java.util.Date());
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,6 +34,7 @@
 						<i class="far fa-calendar-alt"></i> イベント一覧
 					</div>
 					<p>このページは全部のイベント情報をリストで表示する。</p>
+					<p><strong>「開催予定のイベント」</strong>を押すと将来のイベントを表示する。<strong>「終了したイベント」</strong>を押すと終了のイベントを表示する。</p>
 					<p>
 						右の<strong>「検索入力欄」</strong>の中に検索内容を入力して、結果が表示される。
 					</p>
@@ -37,13 +42,14 @@
 				<div class="resume-date text-md-right">
 					<span class="text-primary">JUNE 2019 - MIE</span>
 				</div>
-
 			</div>
-			<table id="table"></table>
+			<div id="toolbar">
+				<button id="allEvent" type="submit" class="btn btn-primary">全部のイベント</button>
+				<button id="reserveEvent" type="submit" class="btn btn-info">開催予定のイベント</button>
+				<button id="oldEvent" type="submit" class="btn btn-light">終了したイベント</button>
+			</div>
+			<table id="table" class="table table-striped"></table>
 			<div class=" mb-3"></div>
-			<p>
-				<a href="joinEventList" class="btn btn-info">参加したイベント</a>
-			</p>
 		</div>
 	</div>
 	<script src="<spring:url value="/js/jquery-2.2.4.min.js" />"></script>

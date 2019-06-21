@@ -1,6 +1,8 @@
 package com.event.myapp.controller;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -376,10 +378,42 @@ public class EventController {
 		pagedListHolder.setPage(Integer.parseInt(p)); //get PageValue "p" of "1.2.3..."
 		model.addAttribute("pagedListHolder", pagedListHolder);
 
-		String action = "eventList"; //set manu value of action
+		String action = "MyCreatedEvent"; //set manu value of action
 		model.addAttribute("action", action);
 
 		return "joinEventList";
+	}
+
+
+	// all of Event
+	@RequestMapping(value = { "/dateOfEvent" })
+	public String dateLlist(Model model, HttpServletRequest request) throws Exception {
+		List<Event> eventList = eventDao.findAll();
+		model.addAttribute("eventList", eventList);
+
+		List<Join> joinList = joinDao.findAll();
+		model.addAttribute("joinList", joinList);
+
+		String action = "todayEvent";
+		model.addAttribute("action", action);
+
+		//create a week
+		Calendar week = Calendar.getInstance();
+		Date today = new Date();
+		week.setTime(today);
+		week.add(Calendar.DAY_OF_WEEK, -2);	//set day of two days ago
+		Date twoDaysAgo = week.getTime();
+
+		List<Date> dateOfWeek = new ArrayList<Date>();		//create "dateOfWeek" of [List] as [Date]
+
+		for (int i = 0; i < 7; i++) {		//write a day of week into the "dateOfWeek" list
+			dateOfWeek.add(twoDaysAgo);
+			week.add(Calendar.DAY_OF_WEEK, +1);
+			twoDaysAgo = week.getTime();
+		}
+		model.addAttribute("dateOfWeek", dateOfWeek);
+
+		return "dateOfEvent";
 	}
 
 }
