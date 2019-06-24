@@ -105,7 +105,7 @@
 						<p>
 							<form:hidden path="user.userId" />
 							<input type="submit" value="登録" class="btn btn-primary"> <a
-								href="eventList" class="btn btn-secondary">キャンセル</a>
+								href="myEventList" class="btn btn-secondary">キャンセル</a>
 						</p>
 					</div>
 				</div>
