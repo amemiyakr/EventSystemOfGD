@@ -36,7 +36,7 @@
 				<div class="col-md-12">
 					<table class="table table-striped mb-4">
 						<tr>
-							<th width="3%" ><i class="fab fa-ethereum"></i></th>
+							<th width="3%"><i class="fab fa-ethereum"></i></th>
 							<th>タイトル</th>
 							<td><c:out value="${event.title}" /> <c:if
 									test="${yourJoin != null}">
@@ -58,7 +58,12 @@
 						<tr>
 							<th><i class="fas fa-map-marked-alt"></i></th>
 							<th>場所</th>
-							<td><c:out value="${event.place}" /></td>
+							<td><c:out value="${event.place}" />　
+								<button type="button" style="font-size: 1em;"
+									class="btn btn-outline-primary btn-sm" data-toggle="modal"
+									data-target="#map">
+									<i class="fab fa-google-plus-square"></i> Map
+								</button></td>
 						</tr>
 						<tr>
 							<th><i class="fas fa-user-tag"></i></th>
@@ -125,6 +130,7 @@
 				</div>
 			</div>
 		</div>
+
 		<!-- del -->
 		<div class="modal fade" id="del" tabindex="-1" role="dialog"
 			aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -137,6 +143,38 @@
 						<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 						<a href="<spring:url value="/delEvent/${event.eventId}" />"
 							class="btn btn-danger">OK</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Mark of Map -->
+		<div class="modal fade" id="map" tabindex="-1" role="dialog"
+			aria-labelledby="mapTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-scrollable" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="mapTitle">
+							<i class="fas fa-map-marked-alt"></i> 地図
+						</h5>
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p>
+							<strong> 場所： <c:out value="${event.place}" /></strong>
+						</p>
+						<div
+							style="height: 390px; width: 100%; padding-left: 10px; padding-right: 10px;">
+							<iframe
+								src="https://maps.google.co.jp/maps?output=embed&q=<c:out value="${event.place}" />lab&hl=ja&z=16"
+								width="100%" height="390" frameborder="0" style="border: 0"></iframe>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<p>詳しい内容は、「拡大地図を表示」をクッリクしてから表示できます。</p>
 					</div>
 				</div>
 			</div>

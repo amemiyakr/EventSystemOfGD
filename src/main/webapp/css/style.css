@@ -268,3 +268,35 @@ a:hover, a:focus, a:active {
 .bd-callout-OfEvent h4 {
     color: #957bbe;
 }
+
+/* edit format of button in "#957bbe" */
+.EventBlack-background {background-color:#957bbe;}
+.EventWhite {color:#ffffff;}
+.EventBlack-background:hover {background-color:#8660c1;}
+.EventWhite:hover {color:#ffffff;}
+
+/* image loop */
+.bg-image-loop {
+	width: 100%;
+	height: 120px; /* 画像の高さを指定 */
+	position: relative;
+	background: url("../uploads/YokohamaOfImgLoop.png") repeat-x 0 0;
+	background-size: auto 100%;
+	animation: bg-slider 80s linear infinite; /* 23sの部分背景画像の約数だとスムーズ */
+	margin: 0px 0;
+	padding: 0;
+}
+@keyframes bg-slider {
+	from { background-position: 0 0; }
+    to { background-position: -1518px 0; } /* 1518pxとは使用した背景画像の長さ */
+}
+
+/* animation of Icon */
+.EventIcon{
+animation: upDown 1.8s ease-in-out 0s infinite alternate;/* "upDown" of @keyframes upDown*/
+}
+
+@keyframes upDown{
+	from{ transform:translate(0,2px); }
+	to{ transform:translate(0,-2px); }
+}

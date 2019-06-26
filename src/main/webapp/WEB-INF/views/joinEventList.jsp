@@ -55,9 +55,9 @@
 									</p>
 									<p class="card-text">
 										<fmt:formatDate value="${join.event.startdate }"
-											pattern="HH時mm分ss" />
+											pattern="HH時mm分" />
 									</p>
-									<p class="card-text">
+									<p class="card-text text-truncate">
 										<i class="fas fa-map-marked-alt"></i>　場所:
 										<c:out value="${join.event.place}" />
 									</p>

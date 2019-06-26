@@ -42,6 +42,7 @@
 			<p>
 				<a href="dateOfEvent" class="btn btn-info">最近のイベント</a>
 			</p>
+
 			<div class="row">
 				<div class="col-md-12">
 					<div class="card-deck">
@@ -77,7 +78,7 @@
 									<p class="card-text">
 										<fmt:formatDate value="${event.startdate }" pattern="HH時mm分" />
 									</p>
-									<p class="card-text">
+									<p class="card-text text-truncate">
 										<i class="fas fa-map-marked-alt"></i> 場所:
 										<c:out value="${event.place}" />
 									</p>

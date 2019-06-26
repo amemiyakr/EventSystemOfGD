@@ -26,20 +26,22 @@
 			<h3 class="mb-5" style="color: #957bbe;">
 				<i class="fab fa-buromobelexperte"></i> EVENT SYSTEM
 			</h3>
-			<div class="resume-item d-flex flex-column flex-md-row mb-5">
-				<div class="resume-content mr-auto">
-					<div class="subheading mb-3">
-						<i class="far fa-calendar-alt"></i> 最近のイベント
+			<div class="bg-image-loop">
+				<div class="resume-item d-flex flex-column flex-md-row mb-5">
+					<div class="resume-content mr-auto">
+						<div class="subheading mb-3">
+							<i class="far fa-calendar-alt"></i> 最近のイベント
+						</div>
+						<p>このページは最近一週間のイベント情報を表示する。</p>
 					</div>
-					<p>このページは最近一週間のイベント情報を表示する。</p>
-				</div>
-				<div class="resume-date text-md-right">
-					<span class="text-primary">JUNE 2019 - MIE</span>
+					<div class="resume-date text-md-right">
+						<span class="text-primary">JUNE 2019 - MIE</span>
+					</div>
 				</div>
 			</div>
 
 			<nav>
-				<div class="nav nav-tabs" id="nav-tab" role="tablist">
+				<div class="EventIcon nav nav-tabs" id="nav-tab" role="tablist">
 					<c:forEach items="${dateOfWeek }" var="day">
 						<c:set var="sdfDay">
 							<fmt:formatDate value="${day}" pattern="yyyy-MM-dd " type="date" />
@@ -55,7 +57,6 @@
 					</c:forEach>
 				</div>
 			</nav>
-
 			<div class="tab-content" id="nav-tabContent">
 				<c:forEach items="${dateOfWeek }" var="day">
 					<c:set var="sdfDay">
@@ -81,7 +82,9 @@
 										</c:forEach>
 									</h4>
 									<p>
-										<c:out value="${event.details}" /><a href="detailsEvent/<c:out value="${event.eventId}" />" class="btn btn-default">詳細</a>
+										<c:out value="${event.details}" />
+										<a href="detailsEvent/<c:out value="${event.eventId}" />"
+											class="btn btn-default">詳細</a>
 									</p>
 								</div>
 							</c:if>
