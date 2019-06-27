@@ -291,12 +291,48 @@ a:hover, a:focus, a:active {
     to { background-position: -1518px 0; } /* 1518pxとは使用した背景画像の長さ */
 }
 
-/* animation of Icon */
-.EventIcon{
+/* animation of img for Yokohama */
+.EventIcon{	/* set animation of upDown  */
 animation: upDown 1.8s ease-in-out 0s infinite alternate;/* "upDown" of @keyframes upDown*/
 }
 
-@keyframes upDown{
+@keyframes upDown{ 	/* from x,y to x,y  */
 	from{ transform:translate(0,2px); }
 	to{ transform:translate(0,-2px); }
+}
+
+.slow-spin {	/* set rotate property  */
+  -webkit-animation: fa-spin 6s infinite linear;
+  animation: fa-spin 6s infinite linear;
+}
+
+@keyframes fa-spin { /* set rotate property  */
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+/* animation of img for "参加" */
+.badge{	/* set animation of upDownOfBadge  */
+animation: upDownOfBadge 0.5s ease-in-out 0s infinite alternate;/* "upDown" of @keyframes upDown*/
+}
+
+@keyframes upDownOfBadge{ 	/* from x,y to x,y  */
+	from{ transform:translate(0,0); }
+	to{ transform:translate(0,-2px); }
+}
+
+/* animation of MapMark */
+.MapMark{	/* set animation of upDown  */
+animation: upDownMapMark 0.3s ease-in-out 0s infinite alternate;/* "upDown" of @keyframes upDown*/
+}
+
+@keyframes upDownMapMark{ 	/* from x,y to x,y  */
+	from{ transform:translate(0,0); }
+	to{ transform:translate(0,-1px); }
 }

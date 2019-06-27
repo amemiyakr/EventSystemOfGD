@@ -20,7 +20,7 @@
 	<div class="container">
 		<div class="resume-section p-3 p-lg-5 d-flex flex-column">
 			<c:import url="header/header.jsp" />
-			<h3 class="mb-5"  style="color: #957bbe;">
+			<h3 class="mb-5" style="color: #957bbe;">
 				<i class="fab fa-buromobelexperte"></i> EVENT SYSTEM
 			</h3>
 			<c:set value="${pagedListHolder}" var="joinList" />
@@ -29,12 +29,16 @@
 			</c:url>
 			<div class="resume-item d-flex flex-column flex-md-row mb-5">
 				<div class="resume-content mr-auto">
-					<div class="subheading mb-3"><i class="far fa-calendar-check"></i> 参加したイベント</div>
+					<div class="subheading mb-3">
+						<i class="far fa-calendar-check"></i> 参加したイベント <span
+							class="badge badge-danger">参加</span>
+					</div>
 					<p>このページは該当ユーザ参加したイベントを表示する。</p>
 
 				</div>
 				<div class="resume-date text-md-right">
-					<span class="text-primary">JUNE 2019 - MIE</span>
+					<span class="text-primary"><i style="color: #957bbe;"
+						class="fab fa-ethereum slow-spin"></i> JUNE 2019 - MIE</span>
 				</div>
 
 			</div>
@@ -45,10 +49,19 @@
 							<div class="card border-danger mb-3 text-center"
 								style="max-width: 18rem;">
 								<div class="card-header">
-									<i class="fab fa-ethereum"></i>　<c:out value="${join.event.title}" />
+									<i class="fab fa-ethereum"></i>
+									<c:out value="${join.event.title}" />
 								</div>
+
+								<div class="mt-2 mr-1 ml-1" style="height: 80px;">
+									<img style="height: 100%; max-width: 100%;"
+										src="${pageContext.request.contextPath}/uploads/imgOfEvent/<c:out value="${join.event.img}" />">
+								</div>
+
 								<div class="card-body">
-									<p class="card-text"><i class="far fa-bell"></i>　開始日時</p>
+									<p class="card-text">
+										<i class="far fa-bell"></i> 開始日時
+									</p>
 									<p class="card-text">
 										<fmt:formatDate value="${join.event.startdate }"
 											pattern="yyyy年MM月dd日(E)" />
@@ -58,7 +71,7 @@
 											pattern="HH時mm分" />
 									</p>
 									<p class="card-text text-truncate">
-										<i class="fas fa-map-marked-alt"></i>　場所:
+										<i class="fas fa-map-marked-alt"></i> 場所:
 										<c:out value="${join.event.place}" />
 									</p>
 									<a href="detailsEvent/<c:out value="${join.event.eventId}" />"

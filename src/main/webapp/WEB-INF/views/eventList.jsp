@@ -40,7 +40,7 @@ session.setAttribute("now" , new java.util.Date());
 					</p>
 				</div>
 				<div class="resume-date text-md-right">
-					<span class="text-primary">JUNE 2019 - MIE</span>
+					<span class="text-primary"><i style="color: #957bbe;" class = "fab fa-ethereum slow-spin"></i>　JUNE 2019 - MIE</span>
 				</div>
 			</div>
 			<div id="toolbar">

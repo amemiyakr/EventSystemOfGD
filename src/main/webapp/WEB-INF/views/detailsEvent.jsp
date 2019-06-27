@@ -32,6 +32,18 @@
 					<span class="text-primary">JUNE 2019 - MIE</span>
 				</div>
 			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="shadow-sm p-3 mb-4 bg-white rounded"
+						style="height: 200px;">
+						<img style="height: 100%;"
+							src="${pageContext.request.contextPath}/uploads/imgOfEvent/<c:out value="${event.img}" />"
+							class="img-fluid rounded mx-auto d-block">
+					</div>
+				</div>
+			</div>
+
 			<div class="row">
 				<div class="col-md-12">
 					<table class="table table-striped mb-4">
@@ -58,9 +70,9 @@
 						<tr>
 							<th><i class="fas fa-map-marked-alt"></i></th>
 							<th>場所</th>
-							<td><c:out value="${event.place}" />　
+							<td><c:out value="${event.place}" />
 								<button type="button" style="font-size: 1em;"
-									class="btn btn-outline-primary btn-sm" data-toggle="modal"
+									class="btn btn-outline-primary btn-sm MapMark" data-toggle="modal"
 									data-target="#map">
 									<i class="fab fa-google-plus-square"></i> Map
 								</button></td>

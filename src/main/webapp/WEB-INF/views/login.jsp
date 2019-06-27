@@ -39,7 +39,7 @@ body {
 			<div class="row">
 				<div class="col-sm-12 text">
 					<span style="font-size: 2.5em; color: #957bbe;"> <i
-						class="fab fa-buromobelexperte"></i>
+						class="fab fa-buromobelexperte slow-spin"></i>
 					</span>
 					<h1 class="h3 mb-3 font-weight-normal">
 						<strong>Event</strong> System

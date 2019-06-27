@@ -33,7 +33,7 @@
 					<span class="text-primary">JUNE 2019 - MIE</span>
 				</div>
 			</div>
-			<form:form modelAttribute="event">
+			<form:form modelAttribute="event" enctype="multipart/form-data">
 				<div class="row">
 					<div class="col-md-12">
 						<div class="form-group">
@@ -42,10 +42,10 @@
 							</p>
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fab fa-ethereum"></i></span>
-							<form:input path="title" cssClass="form-control"
-								placeholder="例：Swiftの勉強会" required="required" />
-							<form:errors path="title" cssClass="form-control alert-danger" />
-						</div>
+								<form:input path="title" cssClass="form-control"
+									placeholder="例：Swiftの勉強会" required="required" />
+								<form:errors path="title" cssClass="form-control alert-danger" />
+							</div>
 						</div>
 						<div class="form-group">
 							<p>
@@ -53,9 +53,9 @@
 							</p>
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="far fa-bell"></i></span>
-							<input type="datetime-local" step="300" name="startDate"
-								class="form-control" required="required">
-						</div>
+								<input type="datetime-local" step="300" name="startDate"
+									class="form-control" required="required">
+							</div>
 						</div>
 						<div class="form-group">
 							<p>
@@ -63,21 +63,22 @@
 							</p>
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-bell"></i></span>
-							<input type="datetime-local" step="300" name="endDate"
-								class="form-control" required="required"
-								pattern="yyyy-MM-dd HH:mm:ss">
-						</div>
+								<input type="datetime-local" step="300" name="endDate"
+									class="form-control" required="required"
+									pattern="yyyy-MM-dd HH:mm:ss">
+							</div>
 						</div>
 						<div class="form-group">
 							<p>
 								<strong>場所(必須)</strong>
 							</p>
 							<div class="input-group-prepend">
-								<span class="input-group-text"><i class="fas fa-map-marked-alt"></i></span>
-							<form:input path="place" cssClass="form-control" placeholder=""
-								required="required" />
-							<form:errors path="place" cssClass="form-control alert-danger" />
-						</div>
+								<span class="input-group-text"><i
+									class="fas fa-map-marked-alt"></i></span>
+								<form:input path="place" cssClass="form-control" placeholder=""
+									required="required" />
+								<form:errors path="place" cssClass="form-control alert-danger" />
+							</div>
 						</div>
 						<div class="form-group">
 							<p>
@@ -85,11 +86,11 @@
 							</p>
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-users"></i></span>
-							<form:select path="group.groupId" items="${group }"
-								itemLabel="groupName" itemValue="groupId"
-								cssClass="form-control">
-							</form:select>
-						</div>
+								<form:select path="group.groupId" items="${group }"
+									itemLabel="groupName" itemValue="groupId"
+									cssClass="form-control">
+								</form:select>
+							</div>
 						</div>
 						<div class="form-group mb-4">
 							<p>
@@ -102,10 +103,23 @@
 									placeholder="" />
 							</div>
 						</div>
+						<div class="form-group mb-4">
+							<p>
+								<strong>ユーザ写真</strong>
+							</p>
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="far fa-images"></i></span>
+								<div class="custom-file">
+									<input type="file" name="file" class="custom-file-input"
+										placeholder="ユーザ写真" /> <label class="custom-file-label"
+										for="inputGroupFile01">Choose file</label>
+								</div>
+							</div>
+						</div>
 						<p>
 							<form:hidden path="user.userId" />
-							<input type="submit" value="登録" class="btn btn-primary"> <a
-								href="myEventList" class="btn btn-secondary">キャンセル</a>
+							<input type="submit" value="登録" class="btn btn-primary">
+							<a href="myEventList" class="btn btn-secondary">キャンセル</a>
 						</p>
 					</div>
 				</div>

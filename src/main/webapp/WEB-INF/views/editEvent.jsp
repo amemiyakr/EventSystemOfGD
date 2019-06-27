@@ -24,14 +24,16 @@
 			</h3>
 			<div class="resume-item d-flex flex-column flex-md-row mb-1">
 				<div class="resume-content mr-auto">
-					<div class="subheading mb-3"><i class="far fa-calendar-alt"></i> イベント編集</div>
+					<div class="subheading mb-3">
+						<i class="far fa-calendar-alt"></i> イベント編集
+					</div>
 					<p>このページはイベントの内容の編集。</p>
 				</div>
 				<div class="resume-date text-md-right">
 					<span class="text-primary">JUNE 2019 - MIE</span>
 				</div>
 			</div>
-			<form:form modelAttribute="event">
+			<form:form modelAttribute="event" enctype="multipart/form-data">
 				<div class="row">
 					<div class="col-md-12">
 						<div class="form-group">
@@ -55,12 +57,12 @@
 							</p>
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="far fa-bell"></i></span>
-							<input type="datetime-local" step="300" name="startDate"
-								class="form-control"
-								value="<fmt:formatDate value="${event.startdate}"
+								<input type="datetime-local" step="300" name="startDate"
+									class="form-control"
+									value="<fmt:formatDate value="${event.startdate}"
 									pattern="yyyy-MM-dd'T'HH:mm:ss" />"
-								required="required">
-						</div>
+									required="required">
+							</div>
 						</div>
 						<div class="form-group">
 							<p>
@@ -68,23 +70,24 @@
 							</p>
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-bell"></i></span>
-							<input type="datetime-local" step="300" name="endDate"
-								class="form-control"
-								value="<fmt:formatDate value="${event.enddate}"
+								<input type="datetime-local" step="300" name="endDate"
+									class="form-control"
+									value="<fmt:formatDate value="${event.enddate}"
 									pattern="yyyy-MM-dd'T'HH:mm:ss" />"
-								pattern="yyyy-MM-dd HH:mm:ss" required="required">
-						</div>
+									pattern="yyyy-MM-dd HH:mm:ss" required="required">
+							</div>
 						</div>
 						<div class="form-group">
 							<p>
 								<strong>場所(必須)</strong>
 							</p>
 							<div class="input-group-prepend">
-								<span class="input-group-text"><i class="fas fa-map-marked-alt"></i></span>
-							<form:input path="place" cssClass="form-control"
-								required="required" />
-							<form:errors path="place" cssClass="form-control alert-danger" />
-						</div>
+								<span class="input-group-text"><i
+									class="fas fa-map-marked-alt"></i></span>
+								<form:input path="place" cssClass="form-control"
+									required="required" />
+								<form:errors path="place" cssClass="form-control alert-danger" />
+							</div>
 						</div>
 						<div class="form-group">
 							<p>
@@ -92,21 +95,36 @@
 							</p>
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-users"></i></span>
-							<form:select path="group.groupId" items="${group }"
-								itemLabel="groupName" itemValue="groupId"
-								cssClass="form-control" />
-						</div>
+								<form:select path="group.groupId" items="${group }"
+									itemLabel="groupName" itemValue="groupId"
+									cssClass="form-control" />
+							</div>
 						</div>
 						<div class="form-group mb-4">
 							<p>
 								<strong>詳細</strong>
 							</p>
 							<div class="input-group-prepend">
-								<span class="input-group-text"><i class="fas fa-info-circle"></i></span>
+								<span class="input-group-text"><i
+									class="fas fa-info-circle"></i></span>
 								<form:textarea path="details" cssClass="form-control" />
 							</div>
 						</div>
+						<div class="form-group mb-4">
+							<p>
+								<strong>ユーザ写真</strong>
+							</p>
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="far fa-images"></i></span>
+								<div class="custom-file">
+									<input type="file" name="file" class="custom-file-input"
+										placeholder="ユーザ写真" /> <label class="custom-file-label"
+										for="inputGroupFile01">Choose file</label>
+								</div>
+							</div>
+						</div>
 						<p>
+							<form:hidden path="img" />
 							<form:hidden path="user.userId" />
 							<input type="submit" value="変更" class="btn btn-warning">
 							<a href="<spring:url value="/detailsEvent/${event.eventId}" />"

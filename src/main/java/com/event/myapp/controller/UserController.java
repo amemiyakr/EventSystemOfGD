@@ -52,7 +52,7 @@ public class UserController {
 
 	}
 
-	// ユーザー登録GET
+	// add user
 	@RequestMapping(value = "/addUser", method = RequestMethod.GET)
 	public String addGet(Model model, HttpSession session) throws Exception {
 		User user = new User();
@@ -68,7 +68,6 @@ public class UserController {
 		return "addUser";
 	}
 
-	// ユーザー登録POST
 	@RequestMapping(value = "/addUser", method = RequestMethod.POST)
 	public String addPost(
 			@Valid User user,
@@ -142,7 +141,7 @@ public class UserController {
 		return "delUser";
 	}
 
-	// ユーザー編集GET
+	// edit user
 	@RequestMapping(value = "/editUser/{id}", method = RequestMethod.GET)
 	public String editGet(@PathVariable("id") Integer userId, Model model, HttpSession session) throws Exception {
 		User user = userDao.findById(userId);
@@ -162,7 +161,7 @@ public class UserController {
 		return "editUser";
 	}
 
-	// ユーザー編集POST
+
 	@RequestMapping(value = "/editUser/{userId}", method = RequestMethod.POST)
 	public String editPost(
 			@RequestParam("passNew") String passNew,

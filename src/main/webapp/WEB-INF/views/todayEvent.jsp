@@ -34,14 +34,15 @@
 					<p>
 						自分が参加を表明しているイベントのタイトル右側には [ <strong>参加</strong> ] と表示する。
 					</p>
+					<p>
+						<a href="dateOfEvent" class="btn btn-primary">最近のイベント</a>
+					</p>
 				</div>
 				<div class="resume-date text-md-right">
-					<span class="text-primary">JUNE 2019 - MIE</span>
+					<span class="text-primary"><i style="color: #957bbe;"
+						class="fab fa-ethereum slow-spin"></i> JUNE 2019 - MIE</span>
 				</div>
 			</div>
-			<p>
-				<a href="dateOfEvent" class="btn btn-info">最近のイベント</a>
-			</p>
 
 			<div class="row">
 				<div class="col-md-12">
@@ -67,6 +68,12 @@
 										</c:if>
 									</c:forEach>
 								</div>
+
+								<div class="mt-2 mr-1 ml-1" style="height: 80px;">
+									<img style="height: 100%; max-width: 100%;"
+										src="${pageContext.request.contextPath}/uploads/imgOfEvent/<c:out value="${event.img}" />">
+								</div>
+
 								<div class="card-body text-default">
 									<p class="card-text">
 										<i class="far fa-bell"></i> 開始日時

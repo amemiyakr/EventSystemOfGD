@@ -35,7 +35,8 @@
 						<p>このページは最近一週間のイベント情報を表示する。</p>
 					</div>
 					<div class="resume-date text-md-right">
-						<span class="text-primary">JUNE 2019 - MIE</span>
+						<span class="text-primary"><i style="color: #957bbe;"
+							class="fab fa-ethereum slow-spin"></i> JUNE 2019 - MIE</span>
 					</div>
 				</div>
 			</div>
@@ -69,23 +70,33 @@
 						<c:forEach items="${eventList }" var="event">
 							<c:if test="${event.startdate < day && event.enddate >= day}">
 								<div class="bd-callout bd-callout-OfEvent">
-									<h4>
-										<i class="fab fa-ethereum"></i> <a
-											href="detailsEvent/<c:out value="${event.eventId}" />"><c:out
-												value="${event.title}" /></a>
-										<c:forEach items="${joinList}" var="join">
-											<c:if
-												test="${join.event.eventId == event.eventId && join.user.userId == userId }">
-												<span class="badge badge-danger align-top"
-													style="font-size: 9px;">参加</span>
-											</c:if>
-										</c:forEach>
-									</h4>
-									<p>
-										<c:out value="${event.details}" />
-										<a href="detailsEvent/<c:out value="${event.eventId}" />"
-											class="btn btn-default">詳細</a>
-									</p>
+									<div class="row">
+										<div class="col">
+											<h4>
+												<i class="fab fa-ethereum"></i> <a
+													href="detailsEvent/<c:out value="${event.eventId}" />"><c:out
+														value="${event.title}" /></a>
+												<c:forEach items="${joinList}" var="join">
+													<c:if
+														test="${join.event.eventId == event.eventId && join.user.userId == userId }">
+														<span class="badge badge-danger align-top"
+															style="font-size: 9px;">参加</span>
+													</c:if>
+												</c:forEach>
+											</h4>
+											<p>
+												<c:out value="${event.details}" />
+												<a href="detailsEvent/<c:out value="${event.eventId}" />"
+													class="btn btn-default">詳細</a>
+											</p>
+										</div>
+										<div class="col">
+											<div class="mt-2 mr-1 ml-1" style="height: 80px; text-align: right;">
+												<img class="shadow-sm p-3 mb-5 bg-white rounded" style="height: 100%; max-width: 100%;"
+													src="${pageContext.request.contextPath}/uploads/imgOfEvent/<c:out value="${event.img}" />">
+											</div>
+										</div>
+									</div>
 								</div>
 							</c:if>
 						</c:forEach>

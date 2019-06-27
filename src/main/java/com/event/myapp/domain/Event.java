@@ -17,6 +17,7 @@ public class Event {
 	private User user;
 	private Date createdate;
 	private String sendMail;
+	private String img;
 
 	public Integer getEventId() {
 		return eventId;
@@ -98,6 +99,12 @@ public class Event {
 		this.sendMail = sendMail;
 	}
 
+	public String getImg() {
+		return img;
+	}
 
+	public void setImg(String img) {
+		this.img = img;
+	}
 
 }

@@ -1,5 +1,6 @@
 package com.event.myapp.controller;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -22,6 +23,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.event.myapp.dao.EventDao;
 import com.event.myapp.dao.GroupDao;
@@ -92,6 +94,7 @@ public class EventController {
 	public String addPost(
 			@RequestParam("startDate") String startDateOfJSP,
 			@RequestParam("endDate") String endDateOfJSP,
+			@RequestParam("file") MultipartFile multipartfile,
 			@Valid Event event,
 			Errors errors,
 			Model model) throws Exception {
@@ -140,6 +143,22 @@ public class EventController {
 		if (!errors.hasErrors()) {
 			if (event.getGroup().getGroupId() == null) {
 				event.setGroup(null);
+			}
+			//File upload
+			if (!multipartfile.isEmpty()) {
+				SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMddHHmmss");
+				String[] originalName = multipartfile.getOriginalFilename().split("\\."); //split the OriginalFilename of file
+				String extensions = originalName[1]; //get the extensions as "jpg,png,gif"
+				String saveName = "img" + fmt.format(new Date()) + "." + extensions; //set SaveName like "img20190611124900.png"
+				File transferSaveFile = new File(
+						"C:\\Users\\User\\Desktop\\k_cyu\\pleiades\\pleiades\\workspace\\EventSystem\\src\\main\\webapp\\uploads\\imgOfEvent\\",
+						saveName); //the really savePath
+				event.setImg(saveName); //set SaveName into "saveName" of "UserTable"
+				multipartfile.transferTo(transferSaveFile); //upload file transfer into a new savePath
+
+			} else {
+
+				event.setImg("event_default.jpg"); //set default into "saveName" of "EventTable"
 			}
 			eventDao.insert(event);
 
@@ -190,6 +209,7 @@ public class EventController {
 	public String editPost(
 			@RequestParam("startDate") String startDateOfJSP,
 			@RequestParam("endDate") String endDateOfJSP,
+			@RequestParam("file") MultipartFile multipartfile,
 			@Valid Event event,
 			Errors errors,
 			Model model,
@@ -242,6 +262,18 @@ public class EventController {
 			}
 		}
 		if (!errors.hasErrors()) {
+			//File upload
+			if (!multipartfile.isEmpty()) {
+				SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMddHHmmss");
+				String[] originalName = multipartfile.getOriginalFilename().split("\\."); //split the OriginalFilename of file
+				String extensions = originalName[1]; //get the extensions as "jpg,png,gif"
+				String saveName = "img" + fmt.format(new Date()) + "." + extensions; //set SaveName like "img20190611124900.png"
+				File transferSaveFile = new File(
+						"C:\\Users\\User\\Desktop\\k_cyu\\pleiades\\pleiades\\workspace\\EventSystem\\src\\main\\webapp\\uploads\\imgOfEvent\\",
+						saveName); //the really savePath
+				event.setImg(saveName); //set SaveName into "saveName" of "UserTable"
+				multipartfile.transferTo(transferSaveFile); //upload file transfer into a new savePath
+			}
 			if (event.getGroup().getGroupId() == null) {
 				event.setGroup(null);
 			}
@@ -384,7 +416,6 @@ public class EventController {
 		return "joinEventList";
 	}
 
-
 	// all of Event
 	@RequestMapping(value = { "/dateOfEvent" })
 	public String dateLlist(Model model, HttpServletRequest request) throws Exception {
@@ -401,12 +432,12 @@ public class EventController {
 		Calendar week = Calendar.getInstance();
 		Date today = new Date();
 		week.setTime(today);
-		week.add(Calendar.DAY_OF_WEEK, -2);	//set day of two days ago
+		week.add(Calendar.DAY_OF_WEEK, -2); //set day of two days ago
 		Date twoDaysAgo = week.getTime();
 
-		List<Date> dateOfWeek = new ArrayList<Date>();		//create "dateOfWeek" of [List] as [Date]
+		List<Date> dateOfWeek = new ArrayList<Date>(); //create "dateOfWeek" of [List] as [Date]
 
-		for (int i = 0; i < 7; i++) {		//write a day of week into the "dateOfWeek" list
+		for (int i = 0; i < 7; i++) { //write a day of week into the "dateOfWeek" list
 			dateOfWeek.add(twoDaysAgo);
 			week.add(Calendar.DAY_OF_WEEK, +1);
 			twoDaysAgo = week.getTime();

@@ -36,15 +36,16 @@
 					<p>
 						<strong>「参加したイベント」</strong>を押すと該当ユーザ参加したのイベントを表示する。
 					</p>
+					<p>
+						<a href="joinEventList" class="btn btn-info">参加したイベント</a> <a
+							href="addEvent" class="btn btn-success">イベントの登録</a>
+					</p>
 				</div>
 				<div class="resume-date text-md-right">
-					<span class="text-primary">JUNE 2019 - MIE</span>
+					<span class="text-primary"><i style="color: #957bbe;"
+						class="fab fa-ethereum slow-spin"></i> JUNE 2019 - MIE</span>
 				</div>
 			</div>
-			<p>
-				<a href="joinEventList" class="btn btn-info">参加したイベント</a> <a
-					href="addEvent" class="btn btn-success">イベントの登録</a>
-			</p>
 			<div class="row">
 				<div class="col-md-12">
 					<div class="card-deck">
@@ -55,6 +56,12 @@
 									<i class="fab fa-ethereum"></i>
 									<c:out value="${created.title}" />
 								</div>
+
+								<div class="mt-2 mr-1 ml-1" style="height: 80px;">
+									<img style="height: 100%; max-width: 100%;"
+										src="${pageContext.request.contextPath}/uploads/imgOfEvent/<c:out value="${created.img}" />">
+								</div>
+
 								<div class="card-body text-default">
 									<p class="card-text">
 										<i class="far fa-bell"></i> 開始日時
